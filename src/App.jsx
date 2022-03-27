@@ -1,13 +1,16 @@
 import React from "react";
+import { useAtom } from 'jotai'
 import "./App.css";
 import Name from "./Name";
 import useRandomName from "./hooks/useRandomName";
 // import useTheme from "./hooks/useTheme";
-import { useThemeContext } from "./contexts/ThemeContext";
+// import { useThemeContext } from "./contexts/ThemeContext";
+import themeAtom from "./atoms/themeAtom";
 
 function App(props) {
   const name = useRandomName();
-  const {theme, toggleTheme} = useThemeContext();
+  // const {theme, toggleTheme} = useThemeContext();
+  const [theme, toggleTheme] = useAtom(themeAtom);
 
   const toggleClick = React.useCallback(() => {
     toggleTheme()
