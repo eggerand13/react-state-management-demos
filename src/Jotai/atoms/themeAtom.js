@@ -1,11 +1,10 @@
-import { atom } from 'jotai'
+import { atom } from 'jotai';
 
-const tAtom = atom("light")
+const tAtom = atom('light');
 
 const themeAtom = atom(
-    (get) => get(tAtom),
-    (get, set, _arg) =>  set(tAtom, get(tAtom) === "light" ? "dark" : "light"),
-  )
-  
+  (get) => get(tAtom),
+  (get, set, _arg) => set(tAtom, get(tAtom) === 'light' ? 'dark' : 'light')
+);
 
-export default themeAtom
+export default themeAtom;
